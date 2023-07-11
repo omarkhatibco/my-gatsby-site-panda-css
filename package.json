@@ -8,14 +8,17 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
+    "prepare": "panda codegen --clean",
+    "develop": "yarn prepare && gatsby develop",
+    "start": "yarn prepare && gatsby develop",
+    "build": "yarn prepare && gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "clean": "yarn prepare && gatsby clean",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@pandacss/dev": "^0.6.0",
+    "@tourlane/fusion-you": "^0.3.3",
     "gatsby": "^5.11.0",
     "gatsby-plugin-postcss": "^6.11.0",
     "postcss": "^8.4.25",
@@ -23,7 +26,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.3.3",
+    "@types/node": "^20.4.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "typescript": "^5.1.6"
